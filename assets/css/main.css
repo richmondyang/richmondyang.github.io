@@ -2747,12 +2747,10 @@ input, select, textarea {
 			background-repeat: no-repeat;
 			background-size: cover;
 			cursor: default;
-			height: 40vh;
-			max-height: 40em;
-			min-height: 23em;
+			height: 100%;
 			overflow: hidden;
 			position: relative;
-			width: 40%;
+			width: 50%;
 		}
 
 			.tiles article .image {
