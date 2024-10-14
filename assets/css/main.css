@@ -2748,11 +2748,11 @@ input, select, textarea {
 			background-size: cover;
 			cursor: default;
 			height: 40vh;
-			max-height: 40em;
+			max-height: none;
 			min-height: 23em;
 			overflow: hidden;
 			position: relative;
-			width: 50%;
+			width: 40%;
 		}
 
 			.tiles article .image {
@@ -2827,7 +2827,7 @@ input, select, textarea {
 			}
 
 			.tiles article:nth-child(4n - 1), .tiles article:nth-child(4n - 2) {
-				width: 50%;
+				width: 60%;
 			}
 
 			.tiles article:nth-child(6n - 5):before {
@@ -2859,7 +2859,7 @@ input, select, textarea {
 			.tiles article {
 				padding: 4em 3em 2em 3em ;
 				height: 30vh;
-				max-height: 30em;
+				max-height: none;
 				min-height: 20em;
 			}
 
