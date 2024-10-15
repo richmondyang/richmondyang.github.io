@@ -2747,9 +2747,8 @@ input, select, textarea {
 			background-repeat: no-repeat;
 			background-size: cover;
 			cursor: default;
-			height: 50px;
+			height: 100%;
 			max-height: none;
-			min-height: 23em;
 			overflow: hidden;
 			position: relative;
 			width: 50%;
@@ -2789,7 +2788,7 @@ input, select, textarea {
 				transition: opacity 0.5s ease;
 				bottom: 0;
 				content: '';
-				display: block;
+				display: flex;
 				height: 100%;
 				left: 0;
 				opacity: 0.85;
@@ -2801,7 +2800,7 @@ input, select, textarea {
 			.tiles article:after {
 				background-color: rgba(36, 41, 67, 0.25);
 				content: '';
-				display: block;
+				display: flex;
 				height: 100%;
 				left: 0;
 				position: absolute;
