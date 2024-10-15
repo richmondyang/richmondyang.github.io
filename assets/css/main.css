@@ -3479,7 +3479,7 @@ input, select, textarea {
 				}
 
 		#banner.major {
-			height: 25vh;
+			height: 35vh;
 			min-height: 0;
 			max-height: 50em;
 		}
