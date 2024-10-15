@@ -2825,7 +2825,7 @@ input, select, textarea {
 			}
 
 			.tiles article:nth-child(4n - 1), .tiles article:nth-child(4n - 2) {
-				width: 10%;
+				width: 50%;
 			}
 
 			.tiles article:nth-child(6n - 5):before {
@@ -3390,7 +3390,7 @@ input, select, textarea {
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 60vh;
+		height: 25vh;
 		margin-bottom: -3.25em;
 		max-height: 32em;
 		min-height: 22em;
@@ -3479,8 +3479,8 @@ input, select, textarea {
 				}
 
 		#banner.major {
-			height: 40vh;
-			min-height: 10em;
+			height: 75vh;
+			min-height: 30em;
 			max-height: 50em;
 		}
 
