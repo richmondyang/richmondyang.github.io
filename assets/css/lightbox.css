@@ -1,4 +1,5 @@
 body.lb-disable-scrolling {
+  height: 100%;
   overflow: hidden;
 }
 
