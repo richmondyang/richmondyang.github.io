@@ -5,14 +5,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Richmond's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-
 	<style>
 		
 		#myImg {
@@ -95,6 +87,14 @@
 		}
 		
 	</style>
+	
+	<head>
+		<title>Richmond's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
 
 	<body class="is-preload">
 
@@ -133,7 +133,7 @@
 										</video>
 									</div>
 									<br>
-									<p>aThis design was inspired by a sugar glider I saw at a zoo. I had been thinking about making a creature design already and I thought the fuzziness and big bulgy eyes of the sugar gliders I had seen were super cute and I wanted to make a design that would capture that feeling.</p>
+									<p>This design was inspired by a sugar glider I saw at a zoo. I had been thinking about making a creature design already and I thought the fuzziness and big bulgy eyes of the sugar gliders I had seen were super cute and I wanted to make a design that would capture that feeling.</p>
 									<p>With my dream game being a Pokemon inspired creature capturing game, I wanted to make a design that had a bit of lore behind it. Given my gripe with how games never explain how saving and checkpoints somehow reset the world, I settled on making it a creature that could control time. The idea of controlling time ended up driving a lot of the design elements.</p>
 									<p>I first sketched my ideas for a design, trying to get a general shape and gesture down for the design. To fit the theme of time, I used elements from generally prehistoric feeling animals such as birds, in this case owls (because of their large eyes) and raptors such as the velociraptor. Since I still wanted to pay homage to my initial inspiration in sugar gliders, I tried to fit a design of "wing" feathers found in raptors as a sort of wing flap and also made the hands in the shape of sugar a sugar gliders.</p>
 									<img id="myImg" src="images/Owlbear/referencesketch.png" alt="" style="display:block;width:30%; margin-left:auto; margin-right:auto;"/>
@@ -168,6 +168,36 @@
 					</div>
 			</div>
 
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="modalImg">
+			<div id="caption"></div>
+		</div>
+		
+		<script>
+			// Get the modal
+			var modal = document.getElementById("myModal");
+			
+			// Get the image and insert it inside the modal - use its "alt" text as a caption
+			var img = document.getElementById("myImg");
+			var modalImg = document.getElementById("modalImg");
+			var captionText = document.getElementById("caption");
+			img.onclick = function(){
+				modal.style.display = "block";
+				modalImg.src = this.src;
+				captionText.innerHTML = this.alt;
+			}
+			
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+			
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() { 
+				modal.style.display = "none";
+			}
+		</script>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -178,33 +208,4 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
-	<!-- The Modal -->
-	<div id="myModal" class="modal">
-		<span class="close">&times;</span>
-		<img class="modal-content" id="modalImg">
-		<div id="caption"></div>
-	</div>
-	
-	<script>
-		// Get the modal
-		var modal = document.getElementById("myModal");
-		
-		// Get the image and insert it inside the modal - use its "alt" text as a caption
-		var img = document.getElementById("myImg");
-		var modalImg = document.getElementById("modalImg");
-		var captionText = document.getElementById("caption");
-		img.onclick = function(){
-			modal.style.display = "block";
-			modalImg.src = this.src;
-			captionText.innerHTML = this.alt;
-		}
-		
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
-		
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() { 
-			modal.style.display = "none";
-		}
-	</script>
 </html>
