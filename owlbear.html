@@ -12,6 +12,97 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+
+	<style>
+		body {font-family: Arial, Helvetica, sans-serif;}
+		
+		#myImg {
+		  border-radius: 5px;
+		  cursor: pointer;
+		  transition: 0.3s;
+		}
+		
+		#myImg:hover {opacity: 0.7;}
+		
+		/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+		}
+		
+		/* Modal Content (image) */
+		.modal-content {
+		  margin: auto;
+		  display: block;
+		  width: 80%;
+		  max-width: 700px;
+		}
+		
+		/* Caption of Modal Image */
+		#caption {
+		  margin: auto;
+		  display: block;
+		  width: 80%;
+		  max-width: 700px;
+		  text-align: center;
+		  color: #ccc;
+		  padding: 10px 0;
+		  height: 150px;
+		}
+		
+		/* Add Animation */
+		.modal-content, #caption {  
+		  -webkit-animation-name: zoom;
+		  -webkit-animation-duration: 0.6s;
+		  animation-name: zoom;
+		  animation-duration: 0.6s;
+		}
+		
+		@-webkit-keyframes zoom {
+		  from {-webkit-transform:scale(0)} 
+		  to {-webkit-transform:scale(1)}
+		}
+		
+		@keyframes zoom {
+		  from {transform:scale(0)} 
+		  to {transform:scale(1)}
+		}
+		
+		/* The Close Button */
+		.close {
+		  position: absolute;
+		  top: 15px;
+		  right: 35px;
+		  color: #f1f1f1;
+		  font-size: 40px;
+		  font-weight: bold;
+		  transition: 0.3s;
+		}
+		
+		.close:hover,
+		.close:focus {
+		  color: #bbb;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+		
+		/* 100% Image Width on Smaller Screens */
+		@media only screen and (max-width: 700px){
+		  .modal-content {
+			width: 100%;
+		  }
+		}
+	</style>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -52,16 +143,16 @@
 									<p>This design was inspired by a sugar glider I saw at a zoo. I had been thinking about making a creature design already and I thought the fuzziness and big bulgy eyes of the sugar gliders I had seen were super cute and I wanted to make a design that would capture that feeling.</p>
 									<p>With my dream game being a Pokemon inspired creature capturing game, I wanted to make a design that had a bit of lore behind it. Given my gripe with how games never explain how saving and checkpoints somehow reset the world, I settled on making it a creature that could control time. The idea of controlling time ended up driving a lot of the design elements.</p>
 									<p>I first sketched my ideas for a design, trying to get a general shape and gesture down for the design. To fit the theme of time, I used elements from generally prehistoric feeling animals such as birds, in this case owls (because of their large eyes) and raptors such as the velociraptor. Since I still wanted to pay homage to my initial inspiration in sugar gliders, I tried to fit a design of "wing" feathers found in raptors as a sort of wing flap and also made the hands in the shape of sugar a sugar gliders.</p>
-									<img src="images/Owlbear/referencesketch.png" alt="" style="display:block;width:30%; margin-left:auto; margin-right:auto;"/>
+									<img id="myImg" src="images/Owlbear/referencesketch.png" alt="" style="display:block;width:30%; margin-left:auto; margin-right:auto;"/>
 									<br>
 									<p>Final PureRef board I used for reference.</p>
-									<img src="images/Owlbear/sugargliderref.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<img id="myImg" src="images/Owlbear/sugargliderref.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									<br>
 									<p>Blockout of the model based on sketches and reference. I struggled at first with getting the facial form to look as I envisioned but I eventually got it close after gathering more references.</p>
-									<img src="images/Owlbear/blockout.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<img id="myImg" src="images/Owlbear/blockout.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									<br>
 									<p>I sculpted together the parts and added details to the face to wrap around the eyes. Sculpting eye sockets made me recognize some problems with my initial sketches and blockout, namely the face not being flat enough. I had to make more changes sculpting than I had anticipated, and as a result, the result at the end of sculpting had a lot of the cute feeling I was trying to capture.</p>
-									<img src="images/Owlbear/sculpt.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<img id="myImg" src="images/Owlbear/sculpt.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									<br>
 									<p>I retopologized with RetopoFlow, adjusting proportions as I went. I was much more satisfied with how the proportions looked after adjusting. I rendered out feather cards from feathers that were procedurally generated using the ____ addon and geometry nodes</p>
 									<div style="text-align:center">
@@ -72,17 +163,47 @@
 									<br>
 									<p>After modeling, I added fur with the Blender hair curves system and textured with a combination of procedural textures and texture painting. The colors on the final model are meant to represent aspects of time seen throughout the day. The eyes have hourglass-shaped pupils, the fur represents a sunset, the head plumage extends the theme of sunsets and dawn, the wing feathers emulate a sunrise, and the tail feathers represent an aurora seen at night.</p>
 									<p>Final render alongside color variations</p>
-									<img src="images/Owlbear/fixedfinal.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<img id="myImg" src="images/Owlbear/fixedfinal.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									<br>
-									<img src="images/Owlbear/variation_blue.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<img id="myImg" src="images/Owlbear/variation_blue.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									<br>
-									<img src="images/Owlbear/variation_white.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<img id="myImg" src="images/Owlbear/variation_white.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									<br>
 									<p>The model ended up very close to what I had originally envisioned. Some improvements I'd like to make in the future are rigging the model, converting the current hair curve sytem to hair cards so the model can be used in real time in a game engine, and adding fur patterns to make the desing more visually interesting. In particular, the hair system right now is very limited in options for adding fur patterns and hair cards would make it both more efficient and more artistically flexible. I also want to eventually add more realistic textures for the front paws and proper scales for the hind legs.</p>
 								</div>
 							</section>
 					</div>
 			</div>
+		
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="modalImg">
+			<div id="caption"></div>
+		</div>
+		
+		<script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+		
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById("myImg");
+		var modalImg = document.getElementById("modalImg");
+		var captionText = document.getElementById("caption");
+		img.onclick = function(){
+			modal.style.display = "block";
+			modalImg.src = this.src;
+			captionText.innerHTML = this.alt;
+		}
+		
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() { 
+			modal.style.display = "none";
+		}
+		</script>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
