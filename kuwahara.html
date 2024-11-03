@@ -62,8 +62,7 @@
 									<p>All resources will be linked at the bottom of this page.</p>
 									<p>The code first convolves pixels with the sobel filter to approximate the partial derivatives and thus gradient of the image. These are then outputted in a structure tensor.</p>
 									<pre>
-										<code>
-											vec4 sobel(vec2 screen_size, vec2 uv)
+										<code>vec4 sobel(vec2 screen_size, vec2 uv)
 											{
 												// Calculate Sobel to approximate structure tensor
 												vec2 d = screen_size.xy;
@@ -97,8 +96,7 @@
 									<br>
 									<p>This structure tensor is then blurred to give smoother results and reduce noise in the partial derivatives.</p>
 									<pre>
-										<code>
-											vec4 blur(vec4 tensor, vec2 uv, vec2 d)
+										<code>vec4 blur(vec4 tensor, vec2 uv, vec2 d)
 											{
 												// Gaussian Blur
 												int kernelRadius = 5;
@@ -135,7 +133,7 @@
 												
 												// Normalize color
 												return vec4(col / kernelSum);
-											}	
+											}
 										</code>
 									</pre>
 									<a href="images/Velociraptor/origami_prototype.png" data-lightbox="draft" data-title="Draft">
