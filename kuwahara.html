@@ -176,7 +176,6 @@
 }
 										</code>
 									</pre>
-									<br>
 									<p>These values can then be used to shift the kernel for every pixel as the image is convolved with the Kuwahara filter. The filter splits the ellipse into 8 sectors and, using gaussian weights from the center of the kernel, finds the sector with the lowest standard deviation. This then becomes the color of the pixel. This implementation uses a polynomial approximation rather than a gaussian to calculate the weight of each pixel to improve performance.<p>
 									<pre>
 										<code>vec4 kuwahara(vec2 n, float phi, float A, vec2 d, vec2 uv)
@@ -290,7 +289,6 @@
 }
 										</code>
 									</pre>
-									<br>
 									<p>These passes are combined into a single fragment shader at the end so that they have access to buffer data and so that they work in 3D (Godot does not support multiple buffers for 3D and thus all post process effects can only take data from one screen buffer).</p>
 									<pre>
 										<code>void fragment() 
@@ -304,7 +302,6 @@
 }
 										</code>
 									</pre>
-									<br>
 									<p>Final render results with differing kernel sizes and demonstrated in 3D</p>
 									<a href="images/Velociraptor/velociraptor.png" data-lightbox="final" data-title="Final Fold">
 										<img id="lightboxImg" src="images/Velociraptor/velociraptor.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
