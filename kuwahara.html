@@ -88,8 +88,8 @@
 }
 										</code>
 									</pre>
-									<a href="images/Velociraptor/velociraptorcp.png" data-lightbox="creasepattern" data-title="Crease Pattern">
-										<img id="lightboxImg" src="images/Velociraptor/velociraptorcp.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<a href="images/Kuwahara/sobel.png" data-lightbox="sobel" data-title="Sobel Filter">
+										<img id="lightboxImg" src="images/Kuwahara/sobel.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									</a>
 									<br>
 									<p>This structure tensor is then blurred to give smoother results and reduce noise in the partial derivatives.</p>
@@ -134,8 +134,8 @@
 }
 										</code>
 									</pre>
-									<a href="images/Velociraptor/origami_prototype.png" data-lightbox="draft" data-title="Draft">
-										<img id="lightboxImg" src="images/Velociraptor/origami_prototype.png" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<a href="images/Kuwahara/blur.png" data-lightbox="blur" data-title="Blurred Sobel">
+										<img id="lightboxImg" src="images/Kuwahara/blur.png" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									</a>
 									<br>
 									<p>The resulting blurred structure tensor is then used to calculate eigenvectors and eigenvalues to shift an elliptical kernel to align with the "flow" of the image. This results in brush strokes that align with the details of an image rather than uniform square or circle artifacts.</p>
@@ -175,6 +175,10 @@
 }
 										</code>
 									</pre>
+									<a href="images/Kuwahara/factor.png" data-lightbox="factor" data-title="Scaling Factor">
+										<img id="lightboxImg" src="images/Kuwahara/factor.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									</a>
+									<br>
 									<p>These values can then be used to shift the kernel for every pixel as the image is convolved with the Kuwahara filter. The filter splits the ellipse into 8 sectors and, using gaussian weights from the center of the kernel, finds the sector with the lowest standard deviation. This then becomes the color of the pixel. This implementation uses a polynomial approximation rather than a gaussian to calculate the weight of each pixel to improve performance.<p>
 									<pre>
 										<code>vec4 kuwahara(vec2 n, float phi, float A, vec2 d, vec2 uv)
@@ -293,8 +297,8 @@
 										<code>void fragment() 
 {
 	vec4 tensor = sobel(SCREEN_PIXEL_SIZE, UV);
-	vec4 fac = scaling_factor(tensor);
-	vec4 blur = blur(fac, UV, SCREEN_PIXEL_SIZE);
+	vec4 blur = blur(tensor, UV, SCREEN_PIXEL_SIZE);
+	vec4 fac = scaling_factor(blur);
 	vec4 output = kuwahara(blur.xy, blur.z, blur.w, SCREEN_PIXEL_SIZE, UV);
 
 	COLOR = output;
@@ -302,12 +306,36 @@
 										</code>
 									</pre>
 									<p>Final render results with differing kernel sizes and demonstrated in 3D</p>
-									<a href="images/Velociraptor/velociraptor.png" data-lightbox="final" data-title="Final Fold">
-										<img id="lightboxImg" src="images/Velociraptor/velociraptor.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<a href="images/Kuwahara/lion_nofilter.png" data-lightbox="example" data-title="No Filter">
+										<img id="lightboxImg" src="images/Kuwahara/lion_nofilter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									</a>
 									<br>
-									<a href="images/Velociraptor/velociraptor_closeup.png" data-lightbox="closeup" data-title="Close Up">
-										<img id="lightboxImg" src="images/Velociraptor/velociraptor_closeup.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									<a href="images/Kuwahara/lion_kernel6.png" data-lightbox="example" data-title="Kernel Size = 6">
+										<img id="lightboxImg" src="images/Kuwahara/lion_kernel6.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									</a>
+									<br>
+									<a href="images/Kuwahara/lion_kernel8.png" data-lightbox="example" data-title="Kernel Size = 8">
+										<img id="lightboxImg" src="images/Kuwahara/lion_kernel8.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									</a>
+									<br>
+									<a href="images/Kuwahara/lion_kernel10.png" data-lightbox="example" data-title="Kernel Size = 10">
+										<img id="lightboxImg" src="images/Kuwahara/lion_kernel10.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									</a>
+									<br>
+									<a href="images/Kuwahara/fps_nofilter.png" data-lightbox="example" data-title="Godot FPS Demo, no filter">
+										<img id="lightboxImg" src="images/Kuwahara/fps_nofilter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									</a>
+									<br>
+									<a href="images/Kuwahara/fps_filter.png" data-lightbox="example" data-title="Godot FPS Demo, with Kuwahara filter">
+										<img id="lightboxImg" src="images/Kuwahara/fps_filter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									</a>
+									<br>
+									<a href="images/Kuwahara/fps_monster_nofilter.png" data-lightbox="example" data-title="Godot FPS Demo, different angle, no filter">
+										<img id="lightboxImg" src="images/Kuwahara/fps_monster_nofilter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+									</a>
+									<br>
+									<a href="images/Kuwahara/fps_monster_filter.png" data-lightbox="example" data-title="Godot FPS Demo, different angle, with Kuwahara filter">
+										<img id="lightboxImg" src="images/Kuwahara/fps_monster_filter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
 									</a>
 									<br>
 									<p>The process of designing origami was very challenging, especially connecting the pieces and getting them to work together in a single square. I debated using a smaller grid and rearranging the arms so that they extending from the opposite corner of the paper and not adjacent to the jaw, but that ended up making the paper too short proportionally with the tail and legs. I hope to update the design so that its more efficient and lies fully flat without internat adjustments, alongside more proportionally accurate as the head in the final design turned out much larger than I had expected in proportion to the rest of the body. However, as my first attempt designing an origami, I'm especially pleased with how it came out in relation to how I had envisioned.</p>
