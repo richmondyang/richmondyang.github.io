@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Richmond's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="assets/css/lightbox.css" rel="stylesheet" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<link rel="preload" href="images/DumpsterDive/thumbnail.png" as="image">
+	</head>
+
+	<style>
+		#lightboxImg:hover {
+			filter: opacity(75%);
+		}
+	</style>
+
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Richmond</strong> <span>Yang</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="art.html">Art</a></li>
+							<li><a href="coding.html">Coding and Game Development</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Dumpster Dive</h1>
+									</header>
+									<span class="image main"><img src="images/DumpsterDive/thumbnail.png" alt="" /></span>
+									<p>Game Link: <a href="https://calrsdr.itch.io/dumpster-dive">https://calrsdr.itch.io/dumpster-dive</a></p>
+									<p>This game was our submission to the Pirate Software Game Jam 15.</p>
+									<p>Prior to the game jam, we were already planning to make a game about interacting with shadows, so when the theme came out and it was "Shadows and Alchemy", we were pleasantly surprised that we already had a base to work off of.</p>	
+									<p>We interpreted shadows as a mechanic where the player needs to stay in shadows to recover health and staying too long in the light will start to cause damage. We interpreted alchemy as a crafting mechanic, where enemies would drop scraps of junk and the player could craft different weapons or items based on a combination of the drops.</p>
+									<p>I was responsible for all 3D models, animations, the environment, and props. My friends at school who I was working with were responsible for programming the combat, movement, menus, crafting, and weapons.</p>
+									<p>For the environment, we settled on a dingy sewer where the player, a raccoon, would be trying to escape. Trash has alchemized into monsters and the player needs to defeat them and craft their way out of the sewer. Below are the models and animations made for the project, featuring a protagonist, 4 basic enemies, and a boss.</p>
+									<div style="text-align:center">
+										<video width=85% muted controls loop>
+											<source src="images/DumpsterDive/raccoon_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% muted controls loop>
+											<source src="images/DumpsterDive/wallet_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% muted controls loop>
+											<source src="images/DumpsterDive/bottle_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% muted controls loop>
+											<source src="images/DumpsterDive/horse_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% muted controls loop>
+											<source src="images/DumpsterDive/snake_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% muted controls loop>
+											<source src="images/DumpsterDive/boss_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<br>
+									<p>The process of making 3D models for the game jam was incredibly difficult. Even though the game jam was 2 weeks long, working on all the models and animations for the project alone was incredibly challenging and I barely finished the models on the day of the submission. Unfortunately, with the amount of bugs and lack of experience properly scoping the project, we were unable to submit on time.</p>
+									<p>The most time consuming part of the project was animation, with this being my first time trying animation. Apart from the raccoon, who's animations were taken from Mixamo, I was responsible for making custom animations for enemies. However, this process was satisfying and I definitely want to spend more time learning to properly animate in the future without such a strict time frame.</p>
+									<p>While we were unable to submit the game this time, we think the ideas are valuable to work off of and we hope to expand the gameplay and fix bugs while refactoring some of the rushed aspects under the hood. In particular, the light detection mechanic is very finicky and we want to find a way to make it more stable, alongside giving the game a more stylized and focus artistic direction. We also struggled using GitHub for version control as we neglected to learn the basics prior to the jam. This ended up causing several problems with us having to completely remake some mechanics due to an inability to solve merge conflicts. However, we gained a lot of experience from this jam just having to finish a project in a strict timeframe, especially since the jam requires a Game Design Document. The process was most importantly fun and a good learning experience for both me making animations and supporting my friends as they participate in their first game jam. We also got fairly familiar with the quirks of Godot, which definitely helped us for our next game jam where we were able to submit on time. After the jam, we also learned to use GitHub so that future projects would run smoothly. As a minimum viable product, we're overall happy with how it turned out and it serves as a good base for what feels to be promising mechanics.</p>
+									<p>For more information on design specifics, refer to the Game Design Document attached in the description of the itch.io page.</p>
+								</div>
+							</section>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/lightbox-plus-jquery.js"></script>
+
+	</body>
+</html>
