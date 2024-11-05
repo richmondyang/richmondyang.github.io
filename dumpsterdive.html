@@ -13,7 +13,7 @@
 		<link href="assets/css/lightbox.css" rel="stylesheet" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<link rel="preload" href="" as="image">
+		<link rel="preload" href="images/DumpsterDive/thumbnail.png" as="image">
 	</head>
 
 	<style>
@@ -53,15 +53,47 @@
 									<header class="major">
 										<h1>Dumpster Dive</h1>
 									</header>
-									<span class="image main"><img src="images/Dyno/game_banner.png" alt="" /></span>
-									<p>Game Link: <a href="https://calrsdr.itch.io/dyno">https://calrsdr.itch.io/dyno</a></p>
+									<span class="image main"><img src="images/DumpsterDive/thumbnail.png" alt="" /></span>
+									<p>Game Link: <a href="https://calrsdr.itch.io/dumpster-dive">https://calrsdr.itch.io/dumpster-dive</a></p>
 									<p>This game was our submission to the Pirate Software Game Jam 15.</p>
 									<p>Prior to the game jam, we were already planning to make a game about interacting with shadows, so when the theme came out and it was "Shadows and Alchemy", we were pleasantly surprised that we already had a base to work off of.</p>	
-									<p></p>
-									<p>I was responsible for all sprites, animations, menu art, level design, tilesets, SFX, and fine-tuning gameplay. I also programmed the randomized level generation and handled some bug fixing. My friends from school who I worked on the project with were responsible for programming the climbing and movement, alongside menu functionality.</p>
-									<p>The climbing mechanic works by sending out rays vertically to intersect with hitboxes and turns off gravity if the player clicks while the ray intersects with the hitbox. Randomized level generation chooses a random tile out of a tileset every time the randomize option is selected.</p>
-									<p>For level design, the default level was designed to give a clear progression in the path to take, but the path itself increasing in difficulty rapidly. While the early stages of the level simply require short vertical or horizontal jumps, The final stage forces the player to take the longest possible jumps with the smallest hitboxes while dangling over a drop that brings the player back to the first stage. This makes the game more exciting to play and adds to the frustration that foddian games usually have.</p>
-									<p>While we were unable to submit the game this time, we think the ideas are valuable to work off of</p>
+									<p>We interpreted shadows as a mechanic where the player needs to stay in shadows to recover health and staying too long in the light will start to cause damage. We interpreted alchemy as a crafting mechanic, where enemies would drop scraps of junk and the player could craft different weapons or items based on a combination of the drops.</p>
+									<p>I was responsible for all 3D models, animations, the environment, and props. My friends at school who I was working with were responsible for programming the combat, movement, menus, crafting, and weapons.</p>
+									<p>For the environment, we settled on a dingy sewer where the player, a raccoon, would be trying to escape. Trash has alchemized into monsters and the player needs to defeat them and craft their way out of the sewer. Below are the models and animations made for the project, featuring a protagonist, 4 basic enemies, and a boss.</p>
+									<div style="text-align:center">
+										<video width=85% autoplay muted controls loop>
+											<source src="images/DumpsterDive/raccoon_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% autoplay muted controls loop>
+											<source src="images/DumpsterDive/wallet_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% autoplay muted controls loop>
+											<source src="images/DumpsterDive/bottle_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% autoplay muted controls loop>
+											<source src="images/DumpsterDive/horse_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% autoplay muted controls loop>
+											<source src="images/DumpsterDive/snake_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<div style="text-align:center">
+										<video width=85% autoplay muted controls loop>
+											<source src="images/DumpsterDive/boss_animation.mp4" type="video/mp4">
+										</video>
+									</div>
+									<p>The process of making 3D models for the game jam was incredibly difficult. Even though the game jam was 2 weeks long, working on all the models and animations for the project alone was incredibly challenging and I barely finished the models on the day of the submission. Unfortunately, with the amount of bugs and lack of experience properly scoping the project, we were unable to submit on time.</p>
+									<p>The most time consuming part of the project was animation, with this being my first time trying animation. Apart from the raccoon, who's animations were taken from Mixamo, I was responsible for making custom animations for enemies. However, this process was satisfying and I definitely want to spend more time learning to properly animate in the future without such a strict time frame.</p>
+									<p>While we were unable to submit the game this time, we think the ideas are valuable to work off of and we hope to expand the gameplay and fix bugs while refactoring some of the rushed aspects under the hood. We gained a lot of experience from this jam just working with a deadline and making projects, especially since the jam forces a Game Design Document. The process was most importantly fun and a good learning experience for both me making animations and supporting my friends as they participate in their first game jam. We also got fairly familiar with the quirks of Godot, which definitely helped us for our next game jam where we were able to submit.</p>
+									<p>For more information on design specifics, refer to the Game Design Document attached in the description of the itch.io page.</p>
 								</div>
 							</section>
 					</div>
