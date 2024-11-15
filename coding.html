@@ -22,6 +22,15 @@
 			background-repeat: no-repeat;
 			background-position: center;
 		}
+
+		.blur-load.loaded > img {
+			opacity: 1;
+		}
+
+		.blur-load > img {
+			opacity: 0;
+			transition: opacity 200ms ease-in-out,
+		}
 	</style>
 
 	<body class="is-preload">
@@ -166,6 +175,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				const blurDivs = document.querySelectorAll(".blur-load")
+				blurDivs.forEach(div => {
+					const img = div.querySelector("img")
 
+					function loaded() {
+						div.classList.add("loaded")
+					}
+
+					if (img.complete) {
+						loaded()
+					}
+					else {
+						img.addEventListener("load", loaded)
+					}
+				})
+			</script>
 	</body>
 </html>
