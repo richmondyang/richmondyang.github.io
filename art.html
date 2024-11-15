@@ -25,11 +25,13 @@
 
 		.blur-load.loaded > img {
 			opacity: 1;
+			filter: none;
 		}
 
 		.blur-load > img {
 			opacity: 0;
-			transition: opacity 200ms ease-in-out;
+			filter: blur(4px);
+			transition: opacity 200ms ease-in-out, filter 200ms ease-in-out;
 		}
 	</style>
 
