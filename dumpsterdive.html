@@ -12,13 +12,16 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="assets/css/lightbox.css" rel="stylesheet" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-		<link rel="preload" href="images/DumpsterDive/thumbnail.png" as="image">
 	</head>
 
 	<style>
 		#lightboxImg:hover {
 			filter: opacity(75%);
+		}
+
+		.blur-load {
+			background-repeat: no-repeat;
+			background-position: center;
 		}
 	</style>
 
@@ -53,7 +56,11 @@
 									<header class="major">
 										<h1>Dumpster Dive</h1>
 									</header>
-									<span class="image main"><img src="images/DumpsterDive/thumbnail.png" alt="" /></span>
+									<span class="image main">
+										<div class="blur-load" style="background-image:url(images/DumpsterDive/Small/thumbnail.png);">
+											<img src="images/DumpsterDive/thumbnail.png" alt="" />
+										</div>
+									</span>
 									<p>Game Link: <a href="https://calrsdr.itch.io/dumpster-dive">https://calrsdr.itch.io/dumpster-dive</a></p>
 									<p>This game was our submission to the Pirate Software Game Jam 15.</p>
 									<p>Prior to the game jam, we were already planning to make a game about interacting with shadows, so when the theme came out and it was "Shadows and Alchemy", we were pleasantly surprised that we already had a base to work off of.</p>	

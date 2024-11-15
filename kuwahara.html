@@ -12,23 +12,16 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="assets/css/lightbox.css" rel="stylesheet" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-		<link rel="preload" href="images/Kuwahara/lion_nofilter.png" as="image">
-		<link rel="preload" href="images/Kuwahara/lion_kernel6.png" as="image">
-		<link rel="preload" href="images/Kuwahara/lion_kernel8.png" as="image">
-		<link rel="preload" href="images/Kuwahara/lion_kernel10.png" as="image">
-		<link rel="preload" href="images/Kuwahara/sobel.png" as="image">
-		<link rel="preload" href="images/Kuwahara/blur.png" as="image">
-		<link rel="preload" href="images/Kuwahara/factor.png" as="image">
-		<link rel="preload" href="images/Kuwahara/fps_nofilter.png" as="image">
-		<link rel="preload" href="images/Kuwahara/fps_filter.png" as="image">
-		<link rel="preload" href="images/Kuwahara/fps_monster_nofilter.png" as="image">
-		<link rel="preload" href="images/Kuwahara/fps_monster_filter.png" as="image">
 	</head>
 
 	<style>
 		#lightboxImg:hover {
 			filter: opacity(75%);
+		}
+
+		.blur-load {
+			background-repeat: no-repeat;
+			background-position: center;
 		}
 	</style>
 
@@ -63,7 +56,11 @@
 									<header class="major">
 										<h1>Anisotropic Kuwahara Filter</h1>
 									</header>
-									<span class="image main"><img src="images/Kuwahara/lion_kernel10.png" alt="" /></span>
+									<span class="image main">
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/lion_kernel10.png);">
+											<img src="images/Kuwahara/lion_kernel10.png" alt="" />
+										</div>
+									</span>
 									<p>This post-processing filter was made for the CS50 final project. I had become incredibly interested in graphics programming after watching YouTuber Acerola, and after watching his video on this shader, I wanted to make an implementation in Godot based on his implementation for Unity for my final project.</p>
 									<p>Using papers linked in Acerola's video alongside information in the video itself and his implementation for Unity URP, I learned the fundamentals of shader programming, the concepts behind the Kuwahara shader, and converted the code in HLSL into a fragment shader in Godot Shading Language (a language heavily based on GLSL).</p>	
 									<p>All resources will be linked at the bottom of this page.</p>
@@ -97,7 +94,9 @@
 										</code>
 									</pre>
 									<a href="images/Kuwahara/sobel.png" data-lightbox="sobel" data-title="Sobel Filter">
-										<img id="lightboxImg" src="images/Kuwahara/sobel.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/sobel.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/sobel.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<p>This structure tensor is then blurred to give smoother results and reduce noise in the partial derivatives.</p>
@@ -143,7 +142,9 @@
 										</code>
 									</pre>
 									<a href="images/Kuwahara/blur.png" data-lightbox="blur" data-title="Blurred Sobel">
-										<img id="lightboxImg" src="images/Kuwahara/blur.png" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/blur.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/blur.png" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<p>The resulting blurred structure tensor is then used to calculate eigenvectors and eigenvalues to shift an elliptical kernel to align with the "flow" of the image. This results in brush strokes that align with the details of an image rather than uniform square or circle artifacts.</p>
@@ -184,7 +185,9 @@
 										</code>
 									</pre>
 									<a href="images/Kuwahara/factor.png" data-lightbox="factor" data-title="Scaling Factor">
-										<img id="lightboxImg" src="images/Kuwahara/factor.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/factor.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/factor.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<p>These values can then be used to shift the kernel for every pixel as the image is convolved with the Kuwahara filter. The filter splits the ellipse into 8 sectors and, using gaussian weights from the center of the kernel, finds the sector with the lowest standard deviation. This then becomes the color of the pixel. This implementation uses a polynomial approximation rather than a gaussian to calculate the weight of each pixel to improve performance.<p>
@@ -315,35 +318,51 @@
 									</pre>
 									<p>Final render results with differing kernel sizes and demonstrated in 3D</p>
 									<a href="images/Kuwahara/lion_nofilter.png" data-lightbox="example" data-title="No Filter">
-										<img id="lightboxImg" src="images/Kuwahara/lion_nofilter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/lion_nofilter.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/lion_nofilter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<a href="images/Kuwahara/lion_kernel6.png" data-lightbox="example" data-title="Kernel Size = 6">
-										<img id="lightboxImg" src="images/Kuwahara/lion_kernel6.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/lion_kernel6.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/lion_kernel6.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<a href="images/Kuwahara/lion_kernel8.png" data-lightbox="example" data-title="Kernel Size = 8">
-										<img id="lightboxImg" src="images/Kuwahara/lion_kernel8.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/lion_kernel8.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/lion_kernel8.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<a href="images/Kuwahara/lion_kernel10.png" data-lightbox="example" data-title="Kernel Size = 10">
-										<img id="lightboxImg" src="images/Kuwahara/lion_kernel10.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/lion_kernel10.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/lion_kernel10.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<a href="images/Kuwahara/fps_nofilter.png" data-lightbox="example" data-title="Godot FPS Demo, no filter">
-										<img id="lightboxImg" src="images/Kuwahara/fps_nofilter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/fps_nofilter.png); background-size: 70%;">	
+											<img id="lightboxImg" src="images/Kuwahara/fps_nofilter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<a href="images/Kuwahara/fps_filter.png" data-lightbox="example" data-title="Godot FPS Demo, with Kuwahara filter">
-										<img id="lightboxImg" src="images/Kuwahara/fps_filter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/fps_filter.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/fps_filter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<a href="images/Kuwahara/fps_monster_nofilter.png" data-lightbox="example" data-title="Godot FPS Demo, different angle, no filter">
-										<img id="lightboxImg" src="images/Kuwahara/fps_monster_nofilter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/fps_monster_nofilter.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/fps_monster_nofilter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<a href="images/Kuwahara/fps_monster_filter.png" data-lightbox="example" data-title="Godot FPS Demo, different angle, with Kuwahara filter">
-										<img id="lightboxImg" src="images/Kuwahara/fps_monster_filter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										<div class="blur-load" style="background-image:url(images/Kuwahara/Small/fps_monster_filter.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Kuwahara/fps_monster_filter.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;"/>
+										</div>
 									</a>
 									<br>
 									<p>Coding a shader ended up being a very challenging process. I had to learn linear algebra to understand the core concepts of the filter and reading papers on the topic was a difficult task and it took some effort to parse what was being said. However, the feeling of having parts just click was amazing. I hope to make the filter more performant, as the frame rate drops noticeably when higher kernel sizes are used due to the efficiency of the filter being O(n^2).</p>

@@ -12,13 +12,16 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="assets/css/lightbox.css" rel="stylesheet" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-		<link rel="preload" href="images/Dyno/game_banner.png" as="image">
 	</head>
 
 	<style>
 		#lightboxImg:hover {
 			filter: opacity(75%);
+		}
+
+		.blur-load {
+			background-repeat: no-repeat;
+			background-position: center;
 		}
 	</style>
 
@@ -53,7 +56,11 @@
 									<header class="major">
 										<h1>Dyno</h1>
 									</header>
-									<span class="image main"><img src="images/Dyno/game_banner.png" alt="" /></span>
+									<span class="image main">
+										<div class="blur-load" style="background-image:url(images/Dyno/Small/game_banner.png);">
+											<img src="images/Dyno/game_banner.png" alt="" />
+										</div>
+									</span>
 									<p>Game Link: <a href="https://calrsdr.itch.io/dyno">https://calrsdr.itch.io/dyno</a></p>
 									<p>Game Jam Submission Page: <a href="https://itch.io/jam/gmtk-2024/rate/2912129">https://itch.io/jam/gmtk-2024/rate/2912129</a></p>
 									<p>This game was our submission to the GMTK Game Jam 2024 and placed us top 35% overall.</p>

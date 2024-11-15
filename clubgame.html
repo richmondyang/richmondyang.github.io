@@ -12,13 +12,16 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="assets/css/lightbox.css" rel="stylesheet" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-		<link rel="preload" href="images/DumpsterDive/thumbnail.png" as="image">
 	</head>
 
 	<style>
 		#lightboxImg:hover {
 			filter: opacity(75%);
+		}
+
+		.blur-load {
+			background-repeat: no-repeat;
+			background-position: center;
 		}
 	</style>
 
@@ -53,7 +56,11 @@
 									<header class="major">
 										<h1>Game Development Club Final Project</h1>
 									</header>
-									<span class="image main"><img src="images/ClubGame/thumbnail.png" alt="" /></span>
+									<span class="image main">
+										<div class="blur-load" style="background-image:url(images/ClubGame/Small/thumbnail.png);">
+											<img src="images/ClubGame/thumbnail.png" alt="" />
+										</div>
+									</span>
 									<p>Game Link: <a href="https://avy-gagneja.itch.io/2d-game-design-project-2024">https://avy-gagneja.itch.io/2d-game-design-project-2024</a></p>
 									<p>This game was our final project for the BASIS Oro Valley Game Development club.</p>
 									<p>I was responsible for founding and leading a club with my friend, teaching 30 6th-12th graders to program and make art for games.</p>

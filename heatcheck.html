@@ -12,13 +12,16 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="assets/css/lightbox.css" rel="stylesheet" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-		<link rel="preload" href="images/HeatCheck/thumbnail.png" as="image">
 	</head>
 
 	<style>
 		#lightboxImg:hover {
 			filter: opacity(75%);
+		}
+
+		.blur-load {
+			background-repeat: no-repeat;
+			background-position: center;
 		}
 	</style>
 
@@ -53,7 +56,11 @@
 									<header class="major">
 										<h1>Heat Check</h1>
 									</header>
-									<span class="image main"><img src="images/HeatCheck/thumbnail.png" alt="" /></span>
+									<span class="image main">
+										<div class="blur-load" style="background-image:url(images/HeatCheck/Small/thumbnail.png);">
+											<img src="images/HeatCheck/thumbnail.png" alt="" />
+										</div>
+									</span>
 									<p>Video Link: <a href="https://youtu.be/6fnxkF4NTPw?si=wB8HDCViqBmxE5wp">hhttps://youtu.be/6fnxkF4NTPw?si=wB8HDCViqBmxE5wp</a></p>
 									<p>This was our submission for the Congressional App Challenge 2023, getting us runner-up in the district.</p>
 									<p>The app makes use of Tkinter for the UI and accesses the OpenWeatherMap API to get weather information about a given address. This information is then put into a formula to calculate heat risk index, which then tells the user whether it is too hot to stay outside or not based on the temperature and humidity. The app also has a hydration tracker that can set a goal for water to drink based on a number of user-provided factors, and track water that the user has already drunk.</p>	
