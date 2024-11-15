@@ -15,6 +15,18 @@
 		<link rel="preload" href="images/Owlbear/fixedfinal.png" as="image">
 		<link rel="preload" href="images/Velociraptor/velociraptor_closeup.png" as="image">
 	</head>
+
+	<style>
+		#lightboxImg:hover {
+			filter: opacity(75%);
+		}
+
+		.blur-load {
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	</style>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -57,7 +69,9 @@
 							<section id="two" class="spotlights">
 								<section>
 									<a href="owlbear.html" class="image">
-										<img src="images/Owlbear/fixedfinal.png" alt="" data-position="center center" />
+										<div class="blur-load" style="background-image:url(images/Owlbear/Small/fixedfinal.png);">
+											<img src="images/Owlbear/fixedfinal.png" alt="" data-position="center center" loading="lazy"/>
+										</div>
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -73,7 +87,9 @@
 								</section>
 								<section>
 									<a href="dunkleosteus.html" class="image">
-										<img src="images/Dunkleosteus/dunkleosteus.png" alt="" data-position="top center" />
+										<div class="blur-load" style="background-image:url(images/Dunkleosteus/Small/wip.png);">
+											<img src="images/Dunkleosteus/wip.png" alt="" data-position="top center" loading="lazy"/>
+										</div>
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -89,7 +105,9 @@
 								</section>
 								<section>
 									<a href="velociraptor.html" class="image">
-										<img src="images/Velociraptor/velociraptor_closeup.png" alt="" data-position="top center" />
+										<div class="blur-load" style="background-image:url(images/Velociraptor/Small/velociraptor_closeup.png);">
+											<img src="images/Velociraptor/velociraptor_closeup.png" alt="" data-position="top center" loading="lazy"/>
+										</div>
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -105,7 +123,9 @@
 								</section>
 								<section>
 									<a href="origami.html" class="image">
-										<img src="images/Origami/basilisk_closeup.png" alt="" data-position="25% 25%" />
+										<div class="blur-load" style="background-image:url(images/Origami/Small/basilisk_closeup.png);"></div>
+											<img src="images/Origami/basilisk_closeup.png" alt="" data-position="25% 25%" loading="lazy"/>
+										</div>
 									</a>
 									<div class="content">
 										<div class="inner">
