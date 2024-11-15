@@ -21,17 +21,16 @@
 		.blur-load {
 			background-repeat: no-repeat;
 			background-position: center;
+			filter: blur(4px);
 		}
 
 		.blur-load.loaded > img {
 			opacity: 1;
-			filter: none;
 		}
 
 		.blur-load > img {
 			opacity: 0;
-			filter: blur(4px);
-			transition: opacity 200ms ease-in-out, filter 200ms ease-in-out;
+			transition: opacity 200ms ease-in-out,
 		}
 	</style>
 
