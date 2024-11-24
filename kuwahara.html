@@ -70,7 +70,7 @@
 											<img src="images/Kuwahara/lion_kernel10.png" alt="" loading="lazy"/>
 										</div>
 									</span>
-									<p>This post-processing filter was made for the CS50 final project. I had become incredibly interested in graphics programming after watching YouTuber Acerola, and after watching his video on this shader, I wanted to make an implementation in Godot based on his implementation for Unity for my final project.</p>
+									<p>This post-processing filter, originally designed to be a denoising filter but is now used as a filter that gives a painterly effect to whatever it is applied to, was made for my CS50 final project. I had become incredibly interested in graphics programming after watching YouTuber Acerola, and after watching his video on this shader, I wanted to make an implementation in Godot based on his implementation for Unity for my final project.</p>
 									<p>Using papers linked in Acerola's video alongside information in the video itself and his implementation for Unity URP, I learned the fundamentals of shader programming, the concepts behind the Kuwahara shader, and converted the code in HLSL into a fragment shader in Godot Shading Language (a language heavily based on GLSL).</p>	
 									<p>All resources will be linked at the bottom of this page.</p>
 									<p>The code first convolves pixels with the sobel filter to approximate the partial derivatives and thus gradient of the image. These are then outputted in a structure tensor.</p>
