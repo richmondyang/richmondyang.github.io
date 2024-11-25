@@ -374,7 +374,7 @@
 										</div>
 									</a>
 									<br>
-									<p>Coding a shader ended up being a very challenging process. I had to learn linear algebra to understand the core concepts of the filter and reading papers on the topic was a difficult task and it took some effort to parse what was being said. However, the feeling of having parts just click was amazing. I hope to make the filter more performant, as the frame rate drops noticeably when higher kernel sizes are used due to the efficiency of the filter being O(n^2).</p>
+									<p>Coding a shader ended up being a very challenging process. I had to learn basic linear algebra to understand the core concepts of the filter and reading papers on the topic was a difficult task as it took some effort to parse what was being said. Moreover, testing the filter was difficult as it is possible for the result to look mostly right while malfunctioning at certain steps. There were certain points where I would just get a completely black screen and I'd have no idea what went wrong. However, the feeling of analyzing and unit testing until all the parts clicked together was amazing. In the future, I hope to make the filter more performant, as the frame rate drops noticeably when higher kernel sizes are used due to an efficiency of O(n^2).</p>
 									<p>References:<br>
 										<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=LDhN-JK3U9g">Acerola Video</a><br>
 										<a target="_blank" rel="noopener noreferrer" href="https://github.com/GarrettGunnell/Post-Processing/blob/main/Assets/Kuwahara%20Filter/AnisotropicKuwahara.shader">Acerola Implementation in Unity</a><br>
