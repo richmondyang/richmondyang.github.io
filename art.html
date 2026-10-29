@@ -31,21 +31,6 @@
 			opacity: 0;
 			transition: opacity 200ms ease-in-out;
 		}
-
-		/* Forces all spotlight section images to share the exact same height and crop cleanly */
-		.spotlights section .image,
-		.spotlights section .blur-load,
-		.spotlights section .blur-load > img {
-			display: block;
-			width: 100%;
-			height: 100%;
-			min-height: 450px; /* Fallback height context to anchor the viewport grid */
-		}
-
-		.spotlights section .blur-load > img {
-			object-fit: cover;
-			object-position: center top; /* Keeps your 3D render composition balanced vertically */
-		}
 	</style>
 
 	<body class="is-preload">
@@ -109,7 +94,7 @@
 								<section>
 									<a href="painting.html" class="image">
 										<div class="blur-load" style="background-image:url(images/Painting/Small/painting.png); background-size: cover;">
-											<img src="images/Painting/painting.png" alt="" data-position="top center" loading="lazy"/>
+											<img src="images/Painting/painting.png" alt="" data-position="center 30%" loading="lazy"/>
 										</div>
 									</a>
 									<div class="content">
