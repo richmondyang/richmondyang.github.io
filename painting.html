@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Richmond's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="assets/css/lightbox.css" rel="stylesheet" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<style>
+		#lightboxImg:hover {
+			filter: blur(1.5px);
+		}
+
+		.blur-load {
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.blur-load.loaded > img {
+			opacity: 1;
+		}
+
+		.blur-load > img {
+			opacity: 0;
+			transition: opacity 200ms ease-in-out;
+		}
+	</style>
+
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Richmond</strong> <span>Yang</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="art.html">Art</a></li>
+							<li><a href="coding.html">Coding and Game Development</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>DSGN 1030 Final Project</h1>
+									</header>
+									<span class="image main">
+										<div class="blur-load" style="background-image:url(images/Painting/Small/painting.png); background-size:100%;">
+											<img src="images/Painting/painting.png" alt="" loading="lazy"/>
+										</div>
+									</span>
+									<br>
+									<p>This render was inspired by a painting I saw by Hubert Robert in the Met</p>
+									<p>Foliage was sourced from Polyhaven, but every other model was hand sculpted by me.</p>
+									<a href="images/Painting/project3_ref-1.jpg" data-lightbox="reference" data-title="Reference Painting">
+										<div class="blur-load" style="background-image:url(images/Painting/Small/project3_ref-1.jpg); background-size: 70%;">
+											<img id="lightboxImg" src="images/Painting/project3_ref-1.jpg" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;" loading="lazy"/>
+										</div>
+									</a>
+									<br>
+									<a href="images/Painting/painting.png" data-lightbox="concept" data-title="Concept Art">
+										<div class="blur-load" style="background-image:url(images/Painting/Small/painting.png); background-size: 70%;">
+											<img id="lightboxImg" src="images/Painting/painting.png" alt="" style="display:block;width:70%; margin-left:auto; margin-right:auto;" loading="lazy"/>
+										</div>
+									</a>
+								</div>
+							</section>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/lightbox-plus-jquery.js"></script>
+			<script>
+				const blurDivs = document.querySelectorAll(".blur-load")
+				blurDivs.forEach(div => {
+					const img = div.querySelector("img")
+
+					function loaded() {
+						div.classList.add("loaded")
+					}
+
+					if (img.complete) {
+						loaded()
+					}
+					else {
+						img.addEventListener("load", loaded)
+					}
+				})
+			</script>
+	</body>
+</html>
